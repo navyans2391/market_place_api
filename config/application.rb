@@ -45,9 +45,10 @@ module MarketPlaceApi
       g.helper = false
       # it will stop the generation of automatic above scripts.
     end
-    config.autoload_paths += %W(\#{config.root}/lib)
       # Don't generate system test files.
     config.generators.system_tests = nil
     config.api_only = true
+    config.eager_load_paths << Rails.root.join('lib')
+
   end
 end
